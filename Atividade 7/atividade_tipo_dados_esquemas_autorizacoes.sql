@@ -1,0 +1,20 @@
+-- Questão 1
+
+CREATE USER User_A WITH PASSWORD = '123456abc*';
+CREATE USER User_B WITH PASSWORD = '123478bcd*';
+CREATE USER User_C WITH PASSWORD = '1234910cde*';
+CREATE USER User_D WITH PASSWORD = '12341112def*';
+CREATE USER User_E WITH PASSWORD = '12341314efg*';
+
+-- Questão 2
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+TO User_A 
+WITH GRANT OPTION;
+
+REVOKE SELECT, INSERT, UPDATE, DELETE ON classroom FROM User_A;
+
+-- Questão 3
+
+SELECT * FROM sys.database_permissions
+WHERE grantee_principal_id = USER_ID('User_A');
