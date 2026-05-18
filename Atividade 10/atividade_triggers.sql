@@ -7,7 +7,6 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    -- Incrementa os créditos do aluno com base no curso que ele acabou de inserir
     UPDATE s
     SET s.tot_cred = s.tot_cred + c.credits
     FROM dbo.student AS s
